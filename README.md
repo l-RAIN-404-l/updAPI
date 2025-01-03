@@ -8,8 +8,8 @@
 [![Build Status](https://img.shields.io/badge/status-under_construction-orange.svg)](#status)  
 [![Open Issues](https://img.shields.io/github/issues/yourusername/updapi)](https://github.com/yourusername/updapi/issues)  
 
-### A free, lightweight, open-source tool designed to simplify API discovery and change tracking:
-### "Update your knowledge base with the latest API docs"
+### "**Upd**ate your knowledge base with the latest **API** docs"
+### A free, lightweight, open-source tool designed to simplify API discovery and enhance LLMs context with relevant info
 
 ---
 
