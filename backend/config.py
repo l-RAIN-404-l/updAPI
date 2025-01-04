@@ -1,5 +1,7 @@
+from dotenv import load_dotenv
 import os
 
+load_dotenv()
+
 class Config:
-    MONGO_URI = os.getenv("MONGO_URI", "mongodb://mongodb:27017/updapi")
-    DEBUG = True
+    MONGO_URI = os.getenv("MONGO_URI")
