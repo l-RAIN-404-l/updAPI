@@ -13,4 +13,4 @@ def search_apis():
 @api_routes.route("/categories", methods=["GET"])
 def get_categories():
     categories = APIModel.get_all_categories()
-    return jsonify(categories)
+    return json_response(categories)
