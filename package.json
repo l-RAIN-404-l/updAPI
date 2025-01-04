@@ -1,5 +1,10 @@
 {
+  "name": "updapi-remote",
+  "version": "1.0.0",
+  "type": "module",
+  "main": "index.js",
   "dependencies": {
-    "crawlee": "^3.12.1"
+    "crawlee": "^3.0.0",
+    "mongodb": "^5.0.0"
   }
 }

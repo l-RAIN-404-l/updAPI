@@ -46,6 +46,19 @@ pip install -r requirements.txt
 docker-compose up --build
 ```
 
+### Check MongoDB Entries
+
+Enter the MongoDB shell through docker:
+```bash
+docker exec -it updapi-mongodb mongo
+use updapi
+```
+
+View DB:
+```bash
+db.apis.find().pretty()
+```
+
 ### Test endpoints
 
 - API Search: Search APIs by name, category, or functionality.
