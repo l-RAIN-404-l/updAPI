@@ -16,26 +16,16 @@
 > ⚠️ **Under Construction**  
 > This project is in the early stages of development and may not function as intended yet. Contributions, feedback, and ideas are highly welcome!
 
-### 🚀 Key Features (Planned for MVP)  
-- 🔍 **Search & Browse:** Easily find APIs by keyword or category.  (e.g., "Machine Learning APIs," "Finance APIs")  
-- 📄 **Latest API Metadata Retrieval:** Retrieve up-to-date API endpoints and parameters, directly from official documentation.  
-- 📂 **Export API Data:** Download JSON or YAML files for use in tools like Swagger Editor, Postman, or CI pipelines.  
-- 📢 **Change Tracking:** Stay ahead of API updates with notifications about changes, deprecated endpoints, or new features—delivered via email, Discord, webhooks, or RSS feeds.  
-- 🛠 **VS Code Integration:** Use the lightweight UpdAPI extension to search and retrieve APIs directly from your terminal.  
+## 📋 Links to Public API DOCS
 
-### Why Choose UpdAPI?  
-UpdAPI is built for **API discovery and integration, specifically with LLMs**. It’s the fastest way to centralize API knowledge, making it easier to build and maintain software with up-to-date API versions.
+`api-docs-urls.csv` contains a **centralized collection of popular APIs** with **links to their official documentation and associated policies**. It includes tools to scrape, preprocess, and update the dataset for better usability and retrieval.
 
---
-
-## 📋 Sample API Doc Entry
-
-api-docs-urls.csv contains a centralized collection of popular APIs with links to their official documentation and associated policies. It includes tools to scrape, preprocess, and update the dataset for better usability and retrieval.
-
+api-docs-url.csv:
 
 | API Name              | Official Documentation URL                           | Privacy Policy URL                 | Terms of Service URL         | Rate Limiting Policy URL               | Changelog/Release Notes URL             | Security Policy URL               | Developer Community/Forum URL           |
 |-----------------------|-----------------------------------------------------|------------------------------------|-------------------------------|----------------------------------------|------------------------------------------|-----------------------------------|------------------------------------------|
 | OpenAI API           | [Documentation](https://platform.openai.com/docs)   | [Privacy](https://openai.com/privacy) | [Terms](https://openai.com/terms) | [Rate Limits](https://platform.openai.com/docs/guides/rate-limits) | [Changelog](https://platform.openai.com/docs/release-notes) | [Security](https://openai.com/security) | [Community](https://community.openai.com/) |
+...
 
 > ⚠️ **the URLs are auto-generated and require manual verification**  
 > We aim to maintain these URLs to be pointing to the **current** document
@@ -171,27 +161,31 @@ We provide two scraping tools to suit different needs:
 ## 💡 Contributing
 
 Contributions are welcome! Here's how you can contribute:
+
 1. **Add API Entries**:
    - Add new API entries directly to `api-docs-urls.csv` or via pull request.
    - Ensure URLs point to the **current version** of the documentation and policies.
-   
-2. **Improve Scrapers**:
+     
+2. **Verify API Entries**:
+   - Is the URL up-to-date?
+   - Is the URL root-level for the relevant page? (api.com/docs/, not api.com/docs/nested)
+   - Is the API doc public and does it comply with "robots.txt"?
+   - Does the URL provide all the expected information (changelogs, rate limits, etc) ?
+   - Is there any dynamically loaded page content that the scraper is able to extract?
+     
+3. **Improve Scrapers**:
    - Enhance `fast-scraper.js` or `accurate-scraper.js` for better performance and compatibility.
    - Add features like advanced error handling or field-specific scraping.
-
-3. **Submit Pull Requests**:
+     
+4. **Submit Pull Requests**:
    - Fork the repository.
    - Create a new branch for your changes.
    - Submit a pull request for review.
 
-
----
-
-## 🔄 Automating Updates
-
-You can automate scraping and dataset updates using cron jobs or GitHub Actions:
-1. Schedule the scraper (`fast-scraper.js` or `accurate-scraper.js`) to run periodically.
-2. Commit and push updated datasets to the repository.
+### 🚀 Roadmap Features
+- 🔍 **Search & Browse:** Easily find APIs by keyword or category  (e.g., "Machine Learning APIs," "Finance APIs")  
+- 📄 **Latest API Metadata Retrieval:** Retrieve up-to-date API endpoints and parameters, directly from official documentation.
+- 🛠 **VS Code Integration:** Use the lightweight UpdAPI extension to search and retrieve APIs directly from your terminal.  
 
 ---
 
