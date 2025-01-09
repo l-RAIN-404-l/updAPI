@@ -1,15 +1,15 @@
 
 # UpdAPI 🔧
 
+### "Update your knowledge base with the latest **API** resources"
+### A free, lightweight tool to streamline the discovery of API documentation, policies, and community resources and enhancing LLMs with accurate, relevant context
+
  ![updAPI](https://github.com/user-attachments/assets/7a67269e-5ce0-480d-95d8-cd7dfe79ca87)
 
 [![License](https://img.shields.io/badge/license-MIT-blue.svg)](LICENSE)  
 [![Contributions Welcome](https://img.shields.io/badge/contributions-welcome-brightgreen.svg?style=flat)](#contributing)  
 [![Build Status](https://img.shields.io/badge/status-under_construction-orange.svg)](#status)  
 [![Open Issues](https://img.shields.io/github/issues/yourusername/updapi)](https://github.com/yourusername/updapi/issues)  
-
-### "**Upd**ate your knowledge base with the latest **API** docs"
-### A free, lightweight, open-source tool designed to simplify API discovery and enhance LLMs context with relevant info
 
 ---
 
@@ -28,8 +28,7 @@ api-docs-url.csv:
 ...
 
 > ⚠️ **the URLs are auto-generated and require manual verification**  
-> We aim to maintain these URLs to be pointing to the **current** document
-> TODO: Set up cron jobs/GitHub Actions to periodically re-run the scrapers and keep the dataset up-to-date
+> We aim to maintain these URLs to be pointing to the **current** document (TODO: Set up cron jobs/GitHub Actions to periodically re-run the scrapers and keep the dataset up-to-date)
 
 
 ## 🛠 Adding More APIs to the Dataset
