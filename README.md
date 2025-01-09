@@ -12,10 +12,10 @@
 [![Open Issues](https://img.shields.io/github/issues/yourusername/updapi)](https://github.com/yourusername/updapi/issues)  
 
 ---
+> Like the project? Please give it a Star so it can reach more people >>>>> ![GitHub stars](https://img.shields.io/github/stars/UpdAPI/updAPI?style=social)
 
 > ⚠️ **Under Construction**  
 > This project is in the early stages of development and may not function as intended yet. Contributions, feedback, and ideas are highly welcome!
-
 
 ## 📋 Links to Public API DOCS
 
