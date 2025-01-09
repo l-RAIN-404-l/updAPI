@@ -12,7 +12,8 @@
 [![Open Issues](https://img.shields.io/github/issues/yourusername/updapi)](https://github.com/yourusername/updapi/issues)  
 
 ---
-> Like the project? Please give it a Star so it can reach more people >>>>> ![GitHub stars](https://img.shields.io/github/stars/UpdAPI/updAPI?style=social)
+> Like the project? Please give it a Star so it can reach more people >>>>> [![Star on GitHub](https://img.shields.io/badge/⭐-Star_on_GitHub-blue?style=flat)](https://github.com/UpdAPI/updAPI/stargazers)
+
 
 > ⚠️ **Under Construction**  
 > This project is in the early stages of development and may not function as intended yet. Contributions, feedback, and ideas are highly welcome!
@@ -164,6 +165,7 @@ We provide two scraping tools to suit different needs:
 
 Contributions are welcome! Here's how you can contribute:
 
+
 1. **Add API Entries**:
    - Add new API entries directly to `api-docs-urls.csv` or via pull request.
    - Ensure URLs point to the **current version** of the documentation and policies.
@@ -183,6 +185,14 @@ Contributions are welcome! Here's how you can contribute:
    - Fork the repository.
    - Create a new branch for your changes.
    - Submit a pull request for review.
+
+If you're using the scripts, first install dependencies:
+```bash
+npm install
+pip install -r requirements.txt
+```
+This installs everything listed in package.json and requirements.txt
+
 
 ### 🚀 Roadmap Features
 - 🔍 **Search & Browse:** Easily find APIs by keyword or category  (e.g., "Machine Learning APIs," "Finance APIs")  

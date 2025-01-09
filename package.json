@@ -1,0 +1,16 @@
+{
+  "name": "updapi-remote",
+  "version": "1.0.0",
+  "description": "![updAPI](https://github.com/user-attachments/assets/7a67269e-5ce0-480d-95d8-cd7dfe79ca87)",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "cheerio": "^1.0.0",
+    "playwright": "^1.49.1"
+  }
+}
