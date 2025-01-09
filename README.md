@@ -16,6 +16,7 @@
 > ⚠️ **Under Construction**  
 > This project is in the early stages of development and may not function as intended yet. Contributions, feedback, and ideas are highly welcome!
 
+
 ## 📋 Links to Public API DOCS
 
 `api-docs-urls.csv` contains a **centralized collection of popular APIs** with **links to their official documentation and associated policies**. It includes tools to scrape, preprocess, and update the dataset for better usability and retrieval.
@@ -157,7 +158,9 @@ We provide two scraping tools to suit different needs:
 
 
 
-## 💡 Contributing
+## 💡 How to Contribute
+
+> For first time contributors, I recommend you to check out https://github.com/firstcontributions/first-contributions and https://www.youtube.com/watch?v=YaToH3s_-nQ
 
 Contributions are welcome! Here's how you can contribute:
 
