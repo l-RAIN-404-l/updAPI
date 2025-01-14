@@ -132,7 +132,7 @@ const cleanUpAndMoveFiles = (removeStorageOnly = false) => {
 
 // Main scraper function
 const scrapeDocs = async () => {
-    const apis = await parseCSV('./api-docs-urls.csv');
+    const apis = await parseCSV('../api-docs-urls.csv');
     console.log(`Loaded ${apis.length} API URLs.`);
 
     const crawler = new CheerioCrawler({
