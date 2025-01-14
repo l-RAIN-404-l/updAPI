@@ -1,6 +1,6 @@
-import { CheerioCrawler, Dataset } from 'crawlee';
-import fs from 'fs';
+import { CheerioCrawler } from 'crawlee';
 import { parse } from 'csv-parse';
+import fs from 'fs';
 import path from 'path';
 
 // Function to parse CSV into JSON
@@ -34,8 +34,6 @@ const canScrape = async (url) => {
 
 // Check `robots.txt` and enqueue URLs
 const checkRobotsAndEnqueue = async (apis, crawler) => {
-    console.time("Check robots.txt and enqueue URLs"); // Start the timer
-
     // Create a list of promises to check robots.txt for all URLs
     const promises = apis.map(async (api) => {
         const { API_Name, Official_Documentation_URL } = api;
@@ -173,5 +171,5 @@ const scrapeDocs = async () => {
 
 // Run the scraper
 scrapeDocs().then(() => {
-    console.log('Scraping completed. Datasets saved in storage/request_queues/default');
+    console.log('Scraping completed. Datasets saved in ./datasets');
 });
