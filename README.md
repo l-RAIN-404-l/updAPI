@@ -55,8 +55,7 @@ If you have additional entries in separate CSV files, use the provided Python ut
 
 ---
 
-
-## How to use the URLs
+## What can we do with the API URLs?
 
 **Use case 1:**
  You can use the scrapers (fast-scraper.js or accurate-scraper.js) to extract content from API docs and enhance your LLM to provide specific and accurate answers about APIs
@@ -108,6 +107,29 @@ API documentation changes frequently, and outdated information can lead to bugs 
 ---
 
 ## 🚀 How to Use the Scrapers
+
+
+
+### Check Python Version
+**Recommended Python Versions**: Python >=3.7 and <3.10
+
+  1. Check your Python version:
+     ```bash
+     python --version
+     ```
+  2. If your Python version is incompatible, you can:
+     - Install a compatible version (e.g., Python 3.9).
+     - Use a virtual environment:
+       ```bash
+       python3.9 -m venv venv
+       source venv/bin/activate  # Or venv\Scripts\activate on Windows
+       pip install -r requirements.txt
+       ```
+  3. Alternatively, use Conda to install PyTorch and its dependencies:
+     ```bash
+     conda install pytorch torchvision torchaudio pytorch-cuda=11.8 -c pytorch -c nvidia
+     ```
+
 
 
 We provide two scraping tools to suit different needs:
