@@ -63,7 +63,7 @@ const checkRobotsAndEnqueue = async (apis, crawler) => {
 // Function to clean up invalid JSON files, move valid ones, and delete the storage folder
 const cleanUpAndMoveFiles = (removeStorageOnly = false) => {
     const directoryPath = './storage/request_queues/default';
-    const destinationPath = './datasets';
+    const destinationPath = './scrapers/datasets';
 
     if (removeStorageOnly) {
         try {
