@@ -2,6 +2,7 @@ import { CheerioCrawler } from 'crawlee';
 import { parse } from 'csv-parse';
 import fs from 'fs';
 import path from 'path';
+import pLimit from 'p-limit';
 
 // Function to parse CSV into JSON
 const parseCSV = async (filePath) => {
@@ -15,29 +16,35 @@ const parseCSV = async (filePath) => {
     });
 };
 
-// Function to check `robots.txt`
+// Function to check `robots.txt` with retry logic
 const canScrape = async (url) => {
     try {
         const robotsUrl = new URL('/robots.txt', url).href;
-        const response = await fetch(robotsUrl);
-        if (!response.ok) {
-            console.warn(`Could not fetch robots.txt for ${url}. Defaulting to allow.`);
-            return true; // Default to allow if robots.txt is not reachable
+        const response = await fetch(robotsUrl, {
+            headers: {
+                'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64)',
+                'Accept': 'text/plain',
+            },
+        });
+        if (response.ok) {
+            const robotsText = await response.text();
+            return !robotsText.includes('Disallow: /'); // Check for broad disallow
         }
-        const robotsText = await response.text();
-        return !robotsText.includes('Disallow: /'); // Check for broad disallow
+        console.warn(`Could not fetch robots.txt for ${url}. Defaulting to allow.`);
+        return true; // Default to allow if robots.txt is not reachable
     } catch (err) {
-        console.error(`Error checking robots.txt for ${url}: ${err.message}`);
-        return false;
+        console.error(`Error checking robots.txt for ${url}: ${err.message} ${err.stack}`);
     }
 };
 
+
 // Check `robots.txt` and enqueue URLs
 const checkRobotsAndEnqueue = async (apis, crawler) => {
+    const limit = pLimit(10);  // Limit concurrency to 10 simultaneous requests
     let enqueuedCount = 0;
 
-    // Create a list of promises to check robots.txt for all URLs
-    const promises = apis.map(async (api) => {
+    // Create a list of promises to check robots.txt for all URLs with concurrency control
+    const promises = apis.map(api => limit(async () => {
         const { API_Name, Official_Documentation_URL } = api;
         const canScrapeResult = await canScrape(Official_Documentation_URL);
 
@@ -52,7 +59,7 @@ const checkRobotsAndEnqueue = async (apis, crawler) => {
         } else {
             console.warn(`Skipping ${Official_Documentation_URL}: Not allowed by robots.txt`);
         }
-    });
+    }));
 
     // Wait for all promises to resolve
     await Promise.all(promises);
@@ -160,16 +167,18 @@ const scrapeDocs = async () => {
         },
     });
 
+    // Check enqueued count
     const enqueuedCount = await checkRobotsAndEnqueue(apis, crawler);
-
     if (enqueuedCount === 0) {
         console.log('No requests were enqueued. Cleaning up the storage folder.');
         cleanUpAndMoveFiles(true);
         return;
     }
 
+    // Run the crawler
     await crawler.run();
 
+    // Clean up the storage
     cleanUpAndMoveFiles();
 };
 
