@@ -57,7 +57,7 @@ If you have additional entries in separate CSV files, use the provided Python ut
 
 ## What can we do with the API URLs?
 
-**Use case 1:**
+**Use Case 1:**
  You can use the scrapers (fast-scraper.js or accurate-scraper.js) to extract content from API docs and enhance your LLM to provide specific and accurate answers about APIs
 
 **Workflow Example:**
@@ -89,7 +89,7 @@ If you have additional entries in separate CSV files, use the provided Python ut
    print(tokenizer.decode(outputs[0], skip_special_tokens=True))
    ```
 
-**Use case 2:**
+**Use Case 2:**
 Maintain offline copies of API documentation for scenarios where internet access is unavailable or restricted. Offline access ensures reliability and speed when querying API documentation.
 
 **How?**
@@ -97,7 +97,7 @@ Maintain offline copies of API documentation for scenarios where internet access
 - Serve these copies locally or integrate them into a lightweight desktop or web application.
 
 
-**Use case 3:**
+**Use Case 3:**
 API documentation changes frequently, and outdated information can lead to bugs or misconfigurations. Automating change detection ensures your knowledge base remains up-to-date.
 
 **How?**
